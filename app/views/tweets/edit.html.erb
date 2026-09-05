@@ -1,0 +1,20 @@
+<% content_for :stylesheet do %>
+  <%= stylesheet_link_tag "tweets_edit", "data-turbo-track": "reload" %>
+<% end %>
+
+<div class="tweet-edit-page">
+  <div class="tweet-edit-card">
+    <p class="form-subtitle">EDIT TRAVEL</p>
+    <h1>旅行情報を編集する</h1>
+
+    <div class="date-warning">
+      旅行期間を短くすると、期間外になった日の予定も削除されます。
+    </div>
+
+    <%= render "form", tweet: @tweet %>
+
+    <div class="back-link">
+      <%= link_to "しおりに戻る", tweet_path(@tweet) %>
+    </div>
+  </div>
+</div>

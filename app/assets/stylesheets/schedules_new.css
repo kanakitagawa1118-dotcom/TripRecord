@@ -1,0 +1,78 @@
+.schedule-new-page {
+  width: min(700px, 90%);
+  margin: 50px auto;
+}
+
+.schedule-new-page .schedule-new-card {
+  padding: 45px;
+  background-color: #ffffff;
+  border-left: 8px solid #3f6f5e;
+  border-radius: 15px;
+  box-shadow: 0 7px 25px rgba(40, 70, 60, 0.1);
+}
+
+.schedule-new-page .day-label {
+  margin-bottom: 5px;
+  color: #6e8d81;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+.schedule-new-page h1 {
+  margin: 0 0 10px;
+  color: #3f6f5e;
+}
+
+.schedule-new-page .target-date {
+  margin-bottom: 30px;
+  color: #777777;
+}
+
+.schedule-new-page .field {
+  margin-bottom: 22px;
+}
+
+.schedule-new-page .field label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.schedule-new-page .field input,
+.schedule-new-page .field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #bbbbbb;
+  border-radius: 7px;
+}
+
+.schedule-new-page input[type="submit"] {
+  width: 100%;
+}
+
+.schedule-new-page .back-link {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.schedule-new-page .schedule-image-field {
+  padding: 18px;
+  background-color: #f3f7f4;
+  border: 1px dashed #9bb7aa;
+  border-radius: 9px;
+}
+
+.schedule-new-page .schedule-image-preview {
+  display: block;
+  width: min(100%, 400px);
+  height: 240px;
+  margin-bottom: 15px;
+  object-fit: cover;
+  border-radius: 9px;
+}
+
+.schedule-new-page .image-help {
+  margin-bottom: 0;
+  color: #777777;
+  font-size: 13px;
+}

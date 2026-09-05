@@ -1,0 +1,58 @@
+.home-top-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px);
+  padding: 40px 20px;
+  background:
+    linear-gradient(
+      rgba(33, 65, 54, 0.55),
+      rgba(33, 65, 54, 0.55)
+    ),
+    url("travel-top.jpg") center / cover;
+}
+
+.home-top-page .top-visual {
+  width: min(750px, 100%);
+  padding: 70px 30px;
+  color: #ffffff;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 18px;
+  backdrop-filter: blur(4px);
+}
+
+.home-top-page .top-subtitle {
+  margin-bottom: 12px;
+  font-size: 14px;
+  letter-spacing: 4px;
+}
+
+.home-top-page h1 {
+  margin: 0;
+  font-size: clamp(45px, 8vw, 80px);
+}
+
+.home-top-page .top-description {
+  margin: 25px 0 35px;
+  font-size: 18px;
+  line-height: 2;
+}
+
+.home-top-page .top-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.home-top-page .top-buttons form {
+  margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .home-top-page .top-buttons {
+    align-items: center;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,16 @@
+<% content_for :stylesheet do %>
+  <%= stylesheet_link_tag "tweets_new", "data-turbo-track": "reload" %>
+<% end %>
+
+<div class="tweet-new-page">
+  <div class="tweet-new-card">
+    <p class="form-subtitle">NEW TRAVEL</p>
+    <h1>新しい旅行を投稿する</h1>
+
+    <%= render "form", tweet: @tweet %>
+
+    <div class="back-link">
+      <%= link_to "マイページに戻る", mypage_path %>
+    </div>
+  </div>
+</div>

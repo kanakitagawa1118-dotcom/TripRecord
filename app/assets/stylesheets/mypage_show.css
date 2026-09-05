@@ -1,0 +1,184 @@
+.mypage {
+  width: min(1100px, 92%);
+  margin: 50px auto;
+}
+
+.mypage .mypage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+.mypage .mypage-subtitle {
+  margin-bottom: 5px;
+  color: #6e8d81;
+  font-size: 13px;
+  letter-spacing: 3px;
+}
+
+.mypage .mypage-header h1 {
+  margin: 0 0 8px;
+  color: #3f6f5e;
+}
+
+.mypage .tweet-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.mypage .tweet-card {
+  overflow: hidden;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 7px 24px rgba(40, 70, 60, 0.13);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.mypage .tweet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(40, 70, 60, 0.2);
+}
+
+.mypage .tweet-card-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.mypage .thumbnail-area {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, #b9d4c7, #e9d8b9);
+}
+
+.mypage .tweet-thumbnail {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.mypage .tweet-card:hover .tweet-thumbnail {
+  transform: scale(1.04);
+}
+
+.mypage .no-thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.8);
+  background:
+    linear-gradient(135deg, #91b5a5, #d9bf91);
+  font-size: 14px;
+  letter-spacing: 4px;
+}
+
+.mypage .thumbnail-overlay {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 55px 24px 22px;
+  color: #ffffff;
+  background:
+    linear-gradient(
+      transparent,
+      rgba(0, 0, 0, 0.78)
+    );
+}
+
+.mypage .thumbnail-overlay h2 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 26px;
+}
+
+.mypage .thumbnail-overlay p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.mypage .tweet-card-body {
+  padding: 22px;
+}
+
+.mypage .companion {
+  margin-top: 0;
+  font-weight: bold;
+}
+
+.mypage .tweet-memo {
+  min-height: 48px;
+  line-height: 1.7;
+}
+
+.mypage .empty-message {
+  grid-column: 1 / -1;
+  padding: 70px 20px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 2px dashed #bbcec5;
+  border-radius: 13px;
+}
+
+@media screen and (max-width: 700px) {
+  .mypage .mypage-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .mypage .tweet-list {
+    grid-template-columns: 1fr;
+  }
+
+  .mypage .thumbnail-area {
+    height: 240px;
+  }
+}
+
+.mypage .shared-trips {
+  margin-top: 70px;
+  padding-top: 40px;
+  border-top: 2px solid #d8e4de;
+}
+
+.mypage .section-heading {
+  margin-bottom: 25px;
+}
+
+.mypage .section-heading h2 {
+  margin-top: 5px;
+  color: #3f6f5e;
+  font-size: 28px;
+}
+
+.mypage .shared-tweet-card {
+  border: 2px solid #9bb7aa;
+}
+
+.mypage .thumbnail-area {
+  position: relative;
+}
+
+.mypage .shared-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 2;
+  padding: 7px 13px;
+  color: #ffffff;
+  background-color: #3f6f5e;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+}

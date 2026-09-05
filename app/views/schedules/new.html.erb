@@ -1,0 +1,26 @@
+<% content_for :stylesheet do %>
+  <%= stylesheet_link_tag "schedules_new", "data-turbo-track": "reload" %>
+<% end %>
+
+<div class="schedule-new-page">
+  <div class="schedule-new-card">
+    <p class="day-label">
+      DAY <%= @travel_day.day_number %>
+    </p>
+
+    <h1>予定を追加する</h1>
+
+    <p class="target-date">
+      <%= @travel_day.date.strftime("%Y年%m月%d日") %>
+    </p>
+
+    <%= render "form",
+               tweet: @tweet,
+               travel_day: @travel_day,
+               schedule: @schedule %>
+
+    <div class="back-link">
+      <%= link_to "しおりに戻る", tweet_path(@tweet) %>
+    </div>
+  </div>
+</div>

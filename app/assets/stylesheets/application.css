@@ -1,0 +1,141 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #333333;
+  background-color: #f7f5f0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    sans-serif;
+}
+
+a {
+  color: #3f6f5e;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 8%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #dddddd;
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.site-header nav form {
+  margin: 0;
+}
+
+.logo {
+  color: #3f6f5e;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.button {
+  display: inline-block;
+  padding: 11px 20px;
+  color: #ffffff;
+  background-color: #3f6f5e;
+  border: none;
+  border-radius: 7px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #31594b;
+}
+
+.secondary-button {
+  background-color: #777777;
+}
+
+.secondary-button:hover {
+  background-color: #5f5f5f;
+}
+
+.delete-button {
+  padding: 11px 20px;
+  color: #ffffff;
+  background-color: #b54747;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.notice,
+.alert {
+  width: min(900px, 90%);
+  margin: 20px auto;
+  padding: 12px 16px;
+  border-radius: 7px;
+}
+
+.notice {
+  background-color: #dff2e5;
+}
+
+.alert {
+  color: #9d2727;
+  background-color: #ffe1e1;
+}
+
+.error-messages {
+  margin-bottom: 20px;
+  padding: 15px;
+  color: #9d2727;
+  background-color: #ffe1e1;
+  border-radius: 7px;
+}
+
+.error-messages h2 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.error-messages ul {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .site-header nav {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}

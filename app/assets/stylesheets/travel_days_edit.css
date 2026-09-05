@@ -1,0 +1,57 @@
+.travel-day-edit-page {
+  width: min(700px, 90%);
+  margin: 50px auto;
+}
+
+.travel-day-edit-page .travel-day-edit-card {
+  padding: 45px;
+  background-color: #ffffff;
+  border-top: 8px solid #3f6f5e;
+  border-radius: 15px;
+  box-shadow: 0 7px 25px rgba(40, 70, 60, 0.1);
+}
+
+.travel-day-edit-page .day-label {
+  margin-bottom: 5px;
+  color: #6e8d81;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+.travel-day-edit-page h1 {
+  margin-top: 0;
+  color: #3f6f5e;
+}
+
+.travel-day-edit-page .target-date {
+  margin-bottom: 30px;
+  color: #777777;
+  font-size: 18px;
+}
+
+.travel-day-edit-page .field {
+  margin-bottom: 22px;
+}
+
+.travel-day-edit-page .field label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.travel-day-edit-page .field input,
+.travel-day-edit-page .field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #bbbbbb;
+  border-radius: 7px;
+}
+
+.travel-day-edit-page input[type="submit"] {
+  width: 100%;
+}
+
+.travel-day-edit-page .back-link {
+  margin-top: 25px;
+  text-align: center;
+}

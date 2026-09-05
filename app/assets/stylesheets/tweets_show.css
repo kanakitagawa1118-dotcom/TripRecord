@@ -1,0 +1,690 @@
+/* ========================================
+   ページ全体
+======================================== */
+
+.tweet-show-page {
+  min-height: 100vh;
+  padding: 40px 0 70px;
+  color: #333333;
+  background-color: #f7f5f0;
+}
+
+.tweet-show-page .page-container {
+  width: min(950px, 92%);
+  margin: 0 auto;
+}
+
+/* ========================================
+   ページ上部の操作エリア
+======================================== */
+
+.tweet-show-page .page-container > .no-print {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.tweet-show-page .page-container > .no-print > a:first-child {
+  display: inline-block;
+  margin-right: auto;
+  color: #3f6f5e;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.tweet-show-page .page-container > .no-print > a:first-child:hover {
+  text-decoration: underline;
+}
+
+.tweet-show-page .page-container > .no-print form {
+  margin: 0;
+}
+
+.tweet-show-page button {
+  font-family: inherit;
+}
+
+/* ========================================
+   しおりの表紙
+======================================== */
+
+.tweet-show-page .shiori-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 570px;
+  padding: 60px 40px;
+  overflow: hidden;
+  color: #31594b;
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.75),
+      transparent 38%
+    ),
+    linear-gradient(
+      135deg,
+      #d8e9df 0%,
+      #eef2e8 50%,
+      #f5e4c8 100%
+    );
+  border: 8px double rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(40, 70, 60, 0.16);
+}
+
+.tweet-show-page .shiori-cover > p:first-child {
+  margin: 0 0 12px;
+  color: #6e8d81;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 6px;
+}
+
+.tweet-show-page .shiori-cover h1 {
+  margin: 15px 0 25px;
+  color: #31594b;
+  font-size: clamp(38px, 7vw, 65px);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.tweet-show-page .shiori-cover > p {
+  margin: 8px 0;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.tweet-show-page .shiori-cover > p:last-child {
+  max-width: 650px;
+  margin-top: 25px;
+  padding-top: 20px;
+  color: #4e5c57;
+  border-top: 1px solid rgba(63, 111, 94, 0.25);
+}
+
+.tweet-show-page .shiori-cover > p:last-child p {
+  margin: 0;
+}
+
+/* ========================================
+   日ごとのしおり
+======================================== */
+
+.tweet-show-page .travel-day {
+  margin-top: 45px;
+  padding: 35px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 7px 25px rgba(40, 70, 60, 0.1);
+}
+
+.tweet-show-page .day-header {
+  padding-bottom: 24px;
+  border-bottom: 3px solid #3f6f5e;
+}
+
+.tweet-show-page .day-header h2 {
+  margin: 0 0 12px;
+  color: #3f6f5e;
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+
+.tweet-show-page .day-header h3 {
+  margin: 10px 0;
+  color: #495b54;
+  font-size: 21px;
+}
+
+.tweet-show-page .day-header > p {
+  margin: 10px 0;
+  color: #555555;
+  line-height: 1.8;
+}
+
+.tweet-show-page .day-header > .no-print {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.tweet-show-page .day-header > .no-print > a:first-child {
+  display: inline-block;
+  padding: 9px 16px;
+  color: #3f6f5e;
+  background-color: #edf4f0;
+  border: 1px solid #9bb7aa;
+  border-radius: 7px;
+  text-decoration: none;
+}
+
+.tweet-show-page .day-header > .no-print > a:first-child:hover {
+  background-color: #dceae3;
+}
+
+/* ========================================
+   スケジュール一覧
+======================================== */
+
+.tweet-show-page .schedule-list {
+  margin-top: 8px;
+}
+
+/*
+  1つの予定：
+  左側に時間、右側に予定内容を表示
+*/
+.tweet-show-page .schedule-row {
+  display: grid;
+  grid-template-columns: 145px minmax(0, 1fr);
+  gap: 25px;
+  padding: 30px 0;
+  border-bottom: 1px solid #dddddd;
+}
+
+.tweet-show-page .schedule-row:last-of-type {
+  border-bottom: none;
+}
+
+/* ========================================
+   時間表示
+======================================== */
+
+.tweet-show-page .schedule-time {
+  padding-top: 4px;
+  color: #3f6f5e;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.7;
+}
+
+/* ========================================
+   予定本文と画像の配置
+======================================== */
+
+/* 画像がない予定 */
+.tweet-show-page .schedule-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 22px;
+  min-width: 0;
+}
+
+/* 画像がある予定 */
+.tweet-show-page .schedule-row.with-image .schedule-main {
+  grid-template-columns: minmax(0, 1fr) 290px;
+  align-items: start;
+}
+
+.tweet-show-page .schedule-content {
+  min-width: 0;
+}
+
+.tweet-show-page .schedule-content h3 {
+  margin: 0 0 10px;
+  color: #31594b;
+  font-size: 22px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.tweet-show-page .schedule-place {
+  display: inline-block;
+  margin: 4px 0 12px;
+  padding: 6px 12px;
+  color: #4f625b;
+  background-color: #eef5f1;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.tweet-show-page .schedule-memo {
+  color: #555555;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.tweet-show-page .schedule-memo p {
+  margin: 8px 0;
+}
+
+/* ========================================
+   スケジュール画像
+======================================== */
+
+.tweet-show-page .schedule-photo {
+  width: 100%;
+  overflow: hidden;
+  background-color: #eeeeee;
+  border-radius: 12px;
+  box-shadow: 0 5px 16px rgba(40, 70, 60, 0.17);
+}
+
+.tweet-show-page .schedule-image {
+  display: block;
+  width: 100%;
+  height: 215px;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.tweet-show-page .schedule-photo:hover .schedule-image {
+  transform: scale(1.04);
+}
+
+/* ========================================
+   スケジュールの編集・削除
+======================================== */
+
+.tweet-show-page .schedule-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.tweet-show-page .schedule-actions form {
+  margin: 0;
+}
+
+.tweet-show-page .schedule-actions a {
+  display: inline-block;
+  padding: 7px 15px;
+  color: #ffffff;
+  background-color: #777777;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.tweet-show-page .schedule-actions a:hover {
+  background-color: #5f5f5f;
+}
+
+.tweet-show-page .schedule-actions button {
+  padding: 7px 15px;
+  color: #ffffff;
+  background-color: #b54747;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tweet-show-page .schedule-actions button:hover {
+  background-color: #913737;
+}
+
+/* ========================================
+   予定が登録されていない場合
+======================================== */
+
+.tweet-show-page .schedule-list > p {
+  margin: 25px 0 0;
+  padding: 30px 20px;
+  color: #777777;
+  text-align: center;
+  background-color: #f8faf8;
+  border: 2px dashed #c5d6ce;
+  border-radius: 10px;
+}
+
+/* ========================================
+   ページ下部の旅行削除ボタン
+======================================== */
+
+.tweet-show-page .page-container > .no-print:last-child {
+  justify-content: flex-end;
+  margin-top: 35px;
+  margin-bottom: 0;
+}
+
+.tweet-show-page .page-container > .no-print:last-child form {
+  margin: 0;
+}
+
+/* ========================================
+   タブレット表示
+======================================== */
+
+@media screen and (max-width: 800px) {
+  .tweet-show-page .schedule-row {
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .tweet-show-page .schedule-row.with-image .schedule-main {
+    grid-template-columns: minmax(0, 1fr) 230px;
+  }
+
+  .tweet-show-page .schedule-image {
+    height: 190px;
+  }
+}
+
+/* ========================================
+   スマートフォン表示
+======================================== */
+
+@media screen and (max-width: 650px) {
+  .tweet-show-page {
+    padding: 25px 0 50px;
+  }
+
+  .tweet-show-page .page-container {
+    width: 94%;
+  }
+
+  .tweet-show-page .page-container > .no-print {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .tweet-show-page .page-container > .no-print > a,
+  .tweet-show-page .page-container > .no-print > button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .tweet-show-page .shiori-cover {
+    min-height: 480px;
+    padding: 45px 22px;
+  }
+
+  .tweet-show-page .shiori-cover h1 {
+    font-size: 38px;
+  }
+
+  .tweet-show-page .travel-day {
+    margin-top: 30px;
+    padding: 24px 20px;
+  }
+
+  .tweet-show-page .day-header h2 {
+    font-size: 23px;
+  }
+
+  /*
+    スマホでは時間・本文・画像を
+    すべて縦方向に並べる
+  */
+  .tweet-show-page .schedule-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 25px 0;
+  }
+
+  .tweet-show-page .schedule-time {
+    padding-top: 0;
+  }
+
+  .tweet-show-page .schedule-row.with-image .schedule-main {
+    grid-template-columns: 1fr;
+  }
+
+  .tweet-show-page .schedule-image {
+    height: 240px;
+  }
+
+  .tweet-show-page .day-header > .no-print {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .tweet-show-page .day-header > .no-print a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .tweet-show-page .page-container > .no-print:last-child {
+    align-items: stretch;
+  }
+
+  .tweet-show-page .delete-button {
+    width: 100%;
+  }
+}
+
+/* ========================================
+   共同編集者管理
+======================================== */
+
+.tweet-show-page .collaboration-panel {
+  margin-top: 35px;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 2px solid #c7dbd1;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(40, 70, 60, 0.09);
+}
+
+.tweet-show-page .collaboration-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.tweet-show-page .collaboration-label {
+  margin: 0 0 5px;
+  color: #6e8d81;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.tweet-show-page .collaboration-heading h2 {
+  margin: 0;
+  color: #3f6f5e;
+}
+
+.tweet-show-page .collaboration-count {
+  padding: 7px 14px;
+  color: #ffffff;
+  background-color: #3f6f5e;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.tweet-show-page .collaboration-description {
+  margin: 18px 0;
+  color: #666666;
+}
+
+.tweet-show-page .collaboration-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+}
+
+.tweet-show-page .collaboration-form input[type="email"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #aebfb7;
+  border-radius: 7px;
+  font-size: 16px;
+}
+
+.tweet-show-page .collaboration-form input[type="submit"] {
+  margin: 0;
+}
+
+.tweet-show-page .collaborator-list {
+  margin-top: 25px;
+}
+
+.tweet-show-page .collaborator-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px 0;
+  border-top: 1px solid #dddddd;
+}
+
+.tweet-show-page .collaborator-item form {
+  margin: 0;
+}
+
+.tweet-show-page .collaborator-email {
+  margin: 0 0 4px;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+.tweet-show-page .collaborator-role {
+  margin: 0;
+  color: #777777;
+  font-size: 13px;
+}
+
+.tweet-show-page .remove-collaborator-button {
+  padding: 8px 14px;
+  color: #ffffff;
+  background-color: #b54747;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tweet-show-page .remove-collaborator-button:hover {
+  background-color: #913737;
+}
+
+.tweet-show-page .no-collaborators {
+  padding: 20px;
+  color: #777777;
+  text-align: center;
+  background-color: #f7f9f8;
+  border-radius: 8px;
+}
+
+.tweet-show-page .shared-information {
+  margin-top: 30px;
+  padding: 18px 22px;
+  color: #31594b;
+  background-color: #e5f0ea;
+  border-left: 5px solid #3f6f5e;
+  border-radius: 8px;
+}
+
+.tweet-show-page .shared-information p {
+  margin: 4px 0;
+}
+
+@media screen and (max-width: 650px) {
+  .tweet-show-page .collaboration-panel {
+    padding: 22px;
+  }
+
+  .tweet-show-page .collaboration-form {
+    grid-template-columns: 1fr;
+  }
+
+  .tweet-show-page .collaboration-form input[type="submit"] {
+    width: 100%;
+  }
+
+  .tweet-show-page .collaborator-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* ========================================
+   PDF・印刷時
+======================================== */
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm;
+  }
+
+  body {
+    color: #222222;
+    background-color: #ffffff;
+  }
+
+  /* 操作用の要素をPDFに表示しない */
+  .site-header,
+  .notice,
+  .alert,
+  .tweet-show-page .no-print {
+    display: none !important;
+  }
+
+  .tweet-show-page {
+    min-height: auto;
+    padding: 0;
+    background-color: #ffffff;
+  }
+
+  .tweet-show-page .page-container {
+    width: 100%;
+    margin: 0;
+  }
+
+  /* 表紙の後で改ページ */
+  .tweet-show-page .shiori-cover {
+    min-height: 250mm;
+    padding: 30mm 15mm;
+    border-radius: 0;
+    box-shadow: none;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  /*
+    各日を新しいページから始める
+    背景色をPDFにも反映させる
+  */
+  .tweet-show-page .travel-day {
+    margin: 0;
+    padding: 10mm;
+    border-radius: 0;
+    box-shadow: none;
+    break-before: page;
+    page-break-before: always;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* 1つの予定を途中で分断しにくくする */
+  .tweet-show-page .schedule-row {
+    grid-template-columns: 32mm minmax(0, 1fr);
+    gap: 6mm;
+    padding: 7mm 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* PDFでも本文と画像を横並びにする */
+  .tweet-show-page .schedule-row.with-image .schedule-main {
+    grid-template-columns: minmax(0, 1fr) 60mm;
+    gap: 5mm;
+  }
+
+  .tweet-show-page .schedule-time {
+    font-size: 14px;
+  }
+
+  .tweet-show-page .schedule-content h3 {
+    font-size: 17px;
+  }
+
+  .tweet-show-page .schedule-image {
+    height: 42mm;
+  }
+
+  /* 印刷時は画像の拡大演出を無効化 */
+  .tweet-show-page .schedule-photo:hover .schedule-image {
+    transform: none;
+  }
+}
